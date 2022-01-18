@@ -3,3 +3,16 @@
   text-align: center;
   margin-top: 4vh;
 }
+
+.formInput {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px 10px;
+  border: 3px solid white;
+  width: 20%;
+}
+
+::placeholder {
+  color: white;
+  font-weight: bold;
+}

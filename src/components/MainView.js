@@ -11,8 +11,11 @@ function MainView() {
 
   return (
     <div className="mainViewDiv">
-      <h1>{weather[0].name}</h1>
-      <h2>{weather[1].temp_c}&#8451;</h2>
+      {weather !== undefined ? (
+        <h1 className="cityName">{weather[0].name}</h1>
+      ) : (
+        <h1>Data fetching error</h1>
+      )}
     </div>
   );
 }

@@ -1,13 +1,15 @@
 import "../styles/CitySelect.css";
 import { useFormik } from "formik";
 
-function CitySelect() {
+function CitySelect(props) {
   const formik = useFormik({
     initialValues: {
       city: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      const inputCity =
+        values.city.charAt(0).toUpperCase() + values.city.slice(1);
+      props.changeCity(inputCity);
       formik.resetForm();
     },
   });
@@ -20,7 +22,7 @@ function CitySelect() {
           id="city"
           name="city"
           type="text"
-          placeholder="Type city"
+          placeholder="Check weather.."
           value={formik.values.city}
           onChange={formik.handleChange}
         ></input>

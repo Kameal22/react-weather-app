@@ -16,4 +16,12 @@ const fetchStartingWeather = async (setWeather) => {
   setWeather(weather);
 };
 
-export { fetchStartingWeather };
+const fetchWeather = async (city, setWeather) => {
+  const response = await axios.get(`${API_URL}q=${city}&aqi=yes`);
+
+  const weather = [response.data.location, response.data.current];
+
+  setWeather(weather);
+};
+
+export { fetchStartingWeather, fetchWeather };

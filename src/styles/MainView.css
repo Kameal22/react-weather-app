@@ -20,7 +20,7 @@
 
 .leftSide {
   color: white;
-  width: 40%;
+  width: 50%;
 }
 
 .leftSide span {
@@ -36,10 +36,24 @@
   color: white;
   width: 40%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.condition {
+  margin-left: 1em;
+  margin-top: 1vh;
+}
+
 .temp_c {
   font-size: 3em;
+}
+
+.forecastsDiv {
+  width: 30%;
+  margin: 4vh auto;
+  display: flex;
+  justify-content: space-between;
+  color: white;
 }

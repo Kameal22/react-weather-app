@@ -3,17 +3,25 @@ import "../styles/MainView.css";
 import { fetchStartingWeather } from "../utills/fetchWeather";
 import { fetchWeather } from "../utills/fetchWeather";
 import { getCurrentDay } from "../utills/getDay";
+import { getLocalization } from "../utills/getLocalization";
 import CitySelect from "./CitySelect";
 
 function MainView() {
   const [weather, setWeather] = useState();
   const [city, setCity] = useState();
   const [today, setToday] = useState();
+  const [localization, setLocalization] = useState();
 
   useEffect(() => {
-    fetchStartingWeather(setWeather, weather);
+    getLocalization(setLocalization, localization);
     getCurrentDay(setToday, today);
   }, []);
+
+  useEffect(() => {
+    if (localization !== undefined) {
+      fetchStartingWeather(localization, setWeather, weather);
+    }
+  }, [localization]);
 
   useEffect(() => {
     if (city !== undefined) {

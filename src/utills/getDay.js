@@ -1,15 +1,14 @@
-const getCurrentDay = (setToday) => {
-  const weekdays = [
-    null,
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
+const weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
+const getCurrentDay = (setToday) => {
   const date = new Date();
   const numDay = date.getDay();
   const today = weekdays[numDay];

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "../styles/MainView.css";
 import { fetchStartingWeather } from "../utills/fetchWeather";
 import { fetchWeather } from "../utills/fetchWeather";
@@ -30,7 +31,7 @@ function MainView() {
   useEffect(() => {
     if (city !== undefined) {
       fetchWeather(city, setWeather, weather);
-      fetchForecast(city, setForecast, forecast); //Works only on city change, fair enough
+      fetchForecast(city, setForecast, forecast);
     }
   }, [city]);
 
@@ -43,7 +44,9 @@ function MainView() {
       {weather !== undefined ? (
         <h1 className="cityName">{weather[0].name}</h1>
       ) : null}
-      <CitySelect changeCity={changeCity} />
+      {localization !== undefined ? (
+        <CitySelect changeCity={changeCity} />
+      ) : null}
 
       <div className="mainInfoDiv">
         <div className="leftSide">
@@ -65,25 +68,24 @@ function MainView() {
           </div>
         </div>
         <div className="rightSide">
+          {weather !== undefined ? <h2 className="weekday">{today}</h2> : null}
           {weather !== undefined ? (
-            <h2
-              onClick={() => console.log(weather[1].condition.text)}
-              className="weekday"
-            >
-              {today}
-            </h2>
-          ) : null}
-          {weather !== undefined ? (
-            <h3 onClick={() => console.log(forecast)} className="condition">
-              {weather[1].condition.text}
-            </h3>
+            <h3 className="condition">{weather[1].condition.text}</h3>
           ) : null}
         </div>
       </div>
       <div className="forecastsDiv">
-        <Forecast />
-        <Forecast />
-        <Forecast />
+        {forecast.map((data) => {
+          return (
+            <Forecast
+              day={data[0].weekday}
+              dayTemp={data[1].dayTemp}
+              nightTemp={data[2].nightTemp}
+              img={`https:${data[3].icon}`}
+              key={uuidv4()}
+            />
+          );
+        })}
       </div>
     </div>
   );

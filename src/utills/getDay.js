@@ -15,4 +15,4 @@ const getCurrentDay = (setToday) => {
   setToday(today);
 };
 
-export { getCurrentDay };
+export { getCurrentDay, weekdays };

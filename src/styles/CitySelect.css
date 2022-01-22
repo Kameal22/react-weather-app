@@ -12,6 +12,11 @@
   width: 20%;
 }
 
+.formInput,
+textarea {
+  color: white;
+}
+
 ::placeholder {
   color: white;
   font-weight: bold;

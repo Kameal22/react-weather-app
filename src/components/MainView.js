@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { setBackgroundFunc } from "../utills/setBackground";
 import { v4 as uuidv4 } from "uuid";
 import "../styles/MainView.css";
 import { fetchStartingWeather } from "../utills/fetchWeather";
@@ -40,7 +41,18 @@ function MainView() {
   };
 
   return (
-    <div className="mainViewDiv">
+    <div
+      className="mainViewDiv"
+      style={
+        weather !== undefined
+          ? {
+              backgroundImage: `url(${setBackgroundFunc(
+                weather[1].condition.text
+              )})`,
+            }
+          : null
+      }
+    >
       {weather !== undefined ? (
         <h1 className="cityName">{weather[0].name}</h1>
       ) : null}

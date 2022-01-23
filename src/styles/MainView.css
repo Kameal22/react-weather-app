@@ -8,7 +8,12 @@
 }
 
 .mainViewDiv {
-  height: 80%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .mainInfoDiv {

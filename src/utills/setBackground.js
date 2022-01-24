@@ -13,7 +13,8 @@ const setBackgroundFunc = (condition) => {
     background = cloudyWeather;
   } else if (
     condition === "Overcast" ||
-    (condition === condition) === "Moderate or heavy showers"
+    condition === "Moderate or heavy showers" ||
+    condition === "Freezing fog"
   ) {
     background = stormyWeather;
   } else if (condition === "Mist" || condition === "Fog") {
@@ -21,7 +22,9 @@ const setBackgroundFunc = (condition) => {
   } else if (
     condition === "Light rain" ||
     condition === "Light rain shower" ||
-    condition === "Patchy rain possible"
+    condition === "Patchy rain possible" ||
+    condition === "Light snow" ||
+    condition === "Patchy light snow"
   ) {
     background = rainyWeather;
   } else {

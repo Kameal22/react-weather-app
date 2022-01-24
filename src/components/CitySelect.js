@@ -9,7 +9,7 @@ function CitySelect(props) {
     onSubmit: (values) => {
       const inputCity =
         values.city.charAt(0).toUpperCase() + values.city.slice(1);
-      props.changeCity(inputCity);
+      props.changeLocalization(inputCity);
       formik.resetForm();
     },
   });

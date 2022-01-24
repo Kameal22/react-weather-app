@@ -11,7 +11,6 @@ import Forecast from "./Forecast";
 
 function MainView() {
   const [weather, setWeather] = useState();
-  const [city, setCity] = useState();
   const [today, setToday] = useState();
   const [localization, setLocalization] = useState();
   const [forecast, setForecast] = useState([]);
@@ -28,14 +27,7 @@ function MainView() {
     }
   }, [localization]);
 
-  useEffect(() => {
-    if (city !== undefined) {
-      fetchWeather(city, setWeather);
-      fetchForecast(city, setForecast);
-    }
-  }, [city]);
-
-  const changeCity = (city) => setCity(city);
+  const changeLocalization = (localization) => setLocalization(localization);
 
   return (
     <div
@@ -54,7 +46,7 @@ function MainView() {
         <h1 className="cityName">{weather[0].name}</h1>
       ) : null}
       {localization !== undefined ? (
-        <CitySelect changeCity={changeCity} />
+        <CitySelect changeLocalization={changeLocalization} />
       ) : null}
 
       {weather !== undefined ? (

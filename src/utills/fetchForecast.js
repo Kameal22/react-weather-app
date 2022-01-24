@@ -22,10 +22,6 @@ const fetchForecast = async (city, setForecast) => {
   });
 
   setForecast(forecast);
-  // console.log(forecastData);
-  // const test = new Date(forecastData[0].date);
-  // const test2 = test.getDay();
-  // console.log(test2);
 };
 
 export { fetchForecast };

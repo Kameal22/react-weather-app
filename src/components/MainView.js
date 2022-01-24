@@ -23,15 +23,15 @@ function MainView() {
 
   useEffect(() => {
     if (localization !== undefined) {
-      fetchWeather(localization, setWeather, weather);
-      fetchForecast(localization, setForecast, forecast);
+      fetchWeather(localization, setWeather);
+      fetchForecast(localization, setForecast);
     }
   }, [localization]);
 
   useEffect(() => {
     if (city !== undefined) {
-      fetchWeather(city, setWeather, weather);
-      fetchForecast(city, setForecast, forecast);
+      fetchWeather(city, setWeather);
+      fetchForecast(city, setForecast);
     }
   }, [city]);
 

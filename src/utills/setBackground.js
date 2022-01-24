@@ -4,18 +4,13 @@ import nightSky from "../images/night-sky.jpg";
 import darkClouds from "../images/dark-clouds.jpg";
 import rainyWeather from "../images/rainy-weather.jpg";
 import stormyWeather from "../images/stormy-weather.jpg";
-import sunnySky from "../images/sunny-sky.jpg";
 
 const setBackgroundFunc = (condition) => {
   let background = "";
-  if (
-    condition === "Clear" ||
-    condition === "Partly cloudy" ||
-    condition === "Light drizzle"
-  ) {
+  if (condition === "Clear" || condition === "Sunny") {
     background = clearSky;
-  } else if (condition === "Sunny") {
-    background = sunnySky;
+  } else if (condition === "Partly cloudy" || condition === "Light drizzle") {
+    background = cloudyWeather;
   } else if (
     condition === "Overcast" ||
     (condition === condition) === "Moderate or heavy showers"

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { setBackgroundFunc } from "../utills/setBackground";
 import { v4 as uuidv4 } from "uuid";
 import "../styles/MainView.css";
-import { fetchStartingWeather } from "../utills/fetchWeather";
 import { fetchWeather } from "../utills/fetchWeather";
 import { getCurrentDay } from "../utills/getDay";
 import { getLocalization } from "../utills/getLocalization";
@@ -24,7 +23,7 @@ function MainView() {
 
   useEffect(() => {
     if (localization !== undefined) {
-      fetchStartingWeather(localization, setWeather, weather);
+      fetchWeather(localization, setWeather, weather);
       fetchForecast(localization, setForecast, forecast);
     }
   }, [localization]);
@@ -36,9 +35,7 @@ function MainView() {
     }
   }, [city]);
 
-  const changeCity = (city) => {
-    setCity(city);
-  };
+  const changeCity = (city) => setCity(city);
 
   return (
     <div
@@ -60,32 +57,28 @@ function MainView() {
         <CitySelect changeCity={changeCity} />
       ) : null}
 
-      <div className="mainInfoDiv">
-        <div className="leftSide">
-          {weather !== undefined ? (
+      {weather !== undefined ? (
+        <div className="mainInfoDiv">
+          <div className="leftSide">
             <h2 className="temp_c">
               {weather[1].temp_c}
               <sup>
                 <span>&#8451;</span>
               </sup>
             </h2>
-          ) : null}
-          <div className="windHumidity">
-            {weather !== undefined ? (
+            <div className="windHumidity">
               <h3>Humidity: {weather[1].humidity}%</h3>
-            ) : null}
-            {weather !== undefined ? (
               <h3>Wind: {weather[1].wind_kph} km/h</h3>
-            ) : null}
+            </div>
+          </div>
+
+          <div className="rightSide">
+            <h2 className="weekday">{today}</h2>
+            <h3 className="condition">{weather[1].condition.text}</h3>
           </div>
         </div>
-        <div className="rightSide">
-          {weather !== undefined ? <h2 className="weekday">{today}</h2> : null}
-          {weather !== undefined ? (
-            <h3 className="condition">{weather[1].condition.text}</h3>
-          ) : null}
-        </div>
-      </div>
+      ) : null}
+
       <div className="forecastsDiv">
         {forecast.map((data) => {
           return (

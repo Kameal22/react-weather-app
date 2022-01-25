@@ -17,7 +17,7 @@
 }
 
 .mainInfoDiv {
-  width: 25%;
+  width: 30%;
   margin: 8vh auto;
   display: flex;
   justify-content: space-between;
@@ -56,9 +56,227 @@
 }
 
 .forecastsDiv {
-  width: 30%;
+  width: 40%;
   margin: 4vh auto;
   display: flex;
   justify-content: space-between;
   color: white;
+}
+
+/* Responsive below */
+
+@media screen and (max-width: 1200px) {
+  .cityName {
+    font-size: 2.2em;
+  }
+
+  .mainInfoDiv {
+    margin-top: 10vh;
+    width: 40%;
+  }
+
+  .leftSide {
+    color: white;
+    width: 45%;
+  }
+
+  .leftSide span {
+    font-size: 0.6em;
+  }
+
+  .windHumidity {
+    margin-top: 2vh;
+    margin-left: 1em;
+    font-size: 1em;
+  }
+
+  .rightSide {
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+  }
+
+  .condition {
+    margin-left: 1em;
+    margin-top: 1vh;
+  }
+
+  .temp_c {
+    font-size: 2.8em;
+  }
+
+  .forecastsDiv {
+    width: 50%;
+    margin: 14vh auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .cityName {
+    font-size: 2em;
+  }
+
+  .mainInfoDiv {
+    margin-top: 10vh;
+    width: 50%;
+  }
+
+  .leftSide {
+    color: white;
+    width: 45%;
+  }
+
+  .leftSide span {
+    font-size: 0.6em;
+  }
+
+  .windHumidity {
+    margin-top: 2vh;
+    margin-left: 1em;
+    font-size: 1em;
+  }
+
+  .rightSide {
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+  }
+
+  .condition {
+    margin-left: 1em;
+    margin-top: 1vh;
+  }
+
+  .temp_c {
+    font-size: 2.8em;
+  }
+
+  .forecastsDiv {
+    width: 60%;
+    margin: 14vh auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cityName {
+    font-size: 1.8em;
+  }
+
+  .mainInfoDiv {
+    margin-top: 12vh;
+    width: 70%;
+  }
+
+  .leftSide {
+    color: white;
+    width: 45%;
+  }
+
+  .leftSide span {
+    font-size: 0.6em;
+  }
+
+  .windHumidity {
+    margin-top: 2vh;
+    margin-left: 1em;
+    font-size: 0.9em;
+  }
+
+  .rightSide {
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+  }
+
+  .condition {
+    margin-left: 1em;
+    margin-top: 1vh;
+  }
+
+  .temp_c {
+    font-size: 2.6em;
+  }
+
+  .forecastsDiv {
+    width: 80%;
+    margin: 14vh auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cityName {
+    font-size: 1.8em;
+  }
+
+  .mainInfoDiv {
+    margin-top: 12vh;
+    width: 70%;
+  }
+
+  .leftSide {
+    color: white;
+    width: 45%;
+  }
+
+  .leftSide span {
+    font-size: 0.6em;
+  }
+
+  .windHumidity {
+    margin-top: 2vh;
+    margin-left: 1em;
+    font-size: 0.9em;
+  }
+
+  .rightSide {
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+  }
+
+  .condition {
+    margin-left: 1em;
+    margin-top: 1vh;
+  }
+
+  .temp_c {
+    font-size: 2.6em;
+  }
+
+  .forecastsDiv {
+    width: 80%;
+    margin: 14vh auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.9em;
+  }
 }

@@ -2,6 +2,7 @@ import "../styles/CitySelect.css";
 import { useFormik } from "formik";
 
 function CitySelect(props) {
+  const placeholder = "Check weather..";
   const formik = useFormik({
     initialValues: {
       city: "",
@@ -22,7 +23,7 @@ function CitySelect(props) {
           id="city"
           name="city"
           type="text"
-          placeholder="Check weather.."
+          placeholder={placeholder}
           value={formik.values.city}
           onChange={formik.handleChange}
         ></input>

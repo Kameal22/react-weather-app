@@ -2,6 +2,7 @@ import { render, screen, cleanup } from "@testing-library/react";
 import Forecast from "../components/Forecast";
 import CitySelect from "../components/CitySelect";
 import MainView from "../components/MainView";
+import LoadingScreen from "../components/LoadingScreen";
 
 const mockGeolocation = {
   getCurrentPosition: jest.fn(),
@@ -24,9 +25,9 @@ test("should render City select component", () => {
   expect(citySelectElement).toBeInTheDocument;
 });
 
-test("should render Main view component", () => {
-  render(<MainView />);
+test("should render loading screen", () => {
+  render(<LoadingScreen />);
 
-  const mainViewElement = screen.getByTestId("mainView-1");
-  expect(mainViewElement).toBeInTheDocument;
+  const loadingScreen = screen.getByTestId("loading-1");
+  expect(loadingScreen).toBeInTheDocument;
 });

@@ -8,6 +8,7 @@ import { getLocalization } from "../utills/getLocalization";
 import { fetchForecast } from "../utills/fetchForecast";
 import CitySelect from "./CitySelect";
 import Forecast from "./Forecast";
+import LoadingScreen from "./LoadingScreen";
 
 function MainView() {
   const [loading, setLoading] = useState(true);
@@ -34,12 +35,10 @@ function MainView() {
   const changeLocalization = (localization) => setLocalization(localization);
 
   if (loading) {
-    return null;
-    // <div data-testid="mainView-1"></div>; THIS NEEDS TO BE ON FOR TEST TO WORK. TRY TO CHANGE IT
+    return <LoadingScreen />;
   } else {
     return (
       <div
-        data-testid="mainView-1"
         className="mainViewDiv"
         style={{
           backgroundImage: `url(${setBackgroundFunc(

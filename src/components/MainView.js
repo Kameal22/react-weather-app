@@ -25,17 +25,21 @@ function MainView() {
   }, []);
 
   useEffect(() => {
-    fetchWeather(localization, setWeather, setLoading);
-    fetchForecast(localization, setForecast);
+    if (localization !== undefined) {
+      fetchWeather(localization, setWeather, setLoading);
+      fetchForecast(localization, setForecast);
+    }
   }, [localization]);
 
   const changeLocalization = (localization) => setLocalization(localization);
 
   if (loading) {
     return null;
+    // <div data-testid="mainView-1"></div>; THIS NEEDS TO BE ON FOR TEST TO WORK. TRY TO CHANGE IT
   } else {
     return (
       <div
+        data-testid="mainView-1"
         className="mainViewDiv"
         style={{
           backgroundImage: `url(${setBackgroundFunc(

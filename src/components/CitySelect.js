@@ -17,7 +17,7 @@ function CitySelect(props) {
 
   return (
     <div data-testid="citySelect-1" className="CitySelectDiv">
-      <form onSubmit={formik.handleSubmit}>
+      <form autoComplete="off" onSubmit={formik.handleSubmit}>
         <input
           className="formInput"
           id="city"

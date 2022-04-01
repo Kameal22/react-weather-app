@@ -3,6 +3,7 @@ import Forecast from "../components/Forecast";
 import CitySelect from "../components/CitySelect";
 import MainView from "../components/MainView";
 import LoadingScreen from "../components/LoadingScreen";
+import { useEffect } from "react";
 
 const mockGeolocation = {
   getCurrentPosition: jest.fn(),
@@ -31,3 +32,10 @@ test("should render loading screen", () => {
   const loadingScreen = screen.getByTestId("loading-1");
   expect(loadingScreen).toBeInTheDocument;
 });
+
+// test("should render main view", () => {
+//   render(<MainView />);
+
+//   const mainView = screen.getByTestId("mainView-1");
+//   expect(mainView).toBeInTheDocument;
+// });

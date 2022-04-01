@@ -39,6 +39,7 @@ function MainView() {
   } else {
     return (
       <div
+        data-testid="mainView-1"
         className="mainViewDiv"
         style={{
           backgroundImage: `url(${setBackgroundFunc(

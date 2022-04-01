@@ -16,7 +16,7 @@ function CitySelect(props) {
   });
 
   return (
-    <div className="CitySelectDiv">
+    <div data-testid="citySelect-1" className="CitySelectDiv">
       <form onSubmit={formik.handleSubmit}>
         <input
           className="formInput"

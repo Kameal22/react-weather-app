@@ -18,20 +18,21 @@ function MainView() {
 
   useEffect(() => {
     getLocalization(setLocalization, localization);
+  }, []);
+
+  useEffect(() => {
     getCurrentDay(setToday, today);
   }, []);
 
   useEffect(() => {
-    if (localization !== undefined) {
-      fetchWeather(localization, setWeather, setLoading);
-      fetchForecast(localization, setForecast);
-    }
+    fetchWeather(localization, setWeather, setLoading);
+    fetchForecast(localization, setForecast);
   }, [localization]);
 
   const changeLocalization = (localization) => setLocalization(localization);
 
   if (loading) {
-    return <h1 className="loadingData">Loading data</h1>;
+    return null;
   } else {
     return (
       <div

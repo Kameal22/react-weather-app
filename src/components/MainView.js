@@ -39,7 +39,7 @@ function MainView() {
   } else {
     return (
       <div
-        data-testid="mainView-1"
+        data-testid="main-1"
         className="mainViewDiv"
         style={{
           backgroundImage: `url(${setBackgroundFunc(
@@ -52,7 +52,14 @@ function MainView() {
 
         <div className="mainInfoDiv">
           <div className="leftSide">
-            <h2 className="temp_c">
+            <h2
+              style={
+                weather.weatherData.temp_c < 5
+                  ? { color: "#014f86" }
+                  : { color: "#fdc500" }
+              }
+              className="temp_c"
+            >
               {weather.weatherData.temp_c}
               <sup>
                 <span>&#8451;</span>

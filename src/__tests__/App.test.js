@@ -1,15 +1,12 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Forecast from "../components/Forecast";
 import CitySelect from "../components/CitySelect";
-import MainView from "../components/MainView";
 import LoadingScreen from "../components/LoadingScreen";
-import { useEffect } from "react";
 
 const mockGeolocation = {
   getCurrentPosition: jest.fn(),
   watchPosition: jest.fn(),
 };
-
 global.navigator.geolocation = mockGeolocation;
 
 test("should render forecast view component", () => {
@@ -32,10 +29,3 @@ test("should render loading screen", () => {
   const loadingScreen = screen.getByTestId("loading-1");
   expect(loadingScreen).toBeInTheDocument;
 });
-
-// test("should render main view", () => {
-//   render(<MainView />);
-
-//   const mainView = screen.getByTestId("mainView-1");
-//   expect(mainView).toBeInTheDocument;
-// });

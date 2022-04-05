@@ -11,8 +11,8 @@ function Forecast(props) {
       <h3>{weekday}</h3>
       <img src={props.img} alt={props.img}></img>
       <div className="dayNightTemp">
-        <h3 style={{ color: "orange" }}>{props.dayTemp}</h3>
-        <h3>{props.nightTemp}</h3>
+        <h3 style={{ color: "#fdc500" }}>{props.dayTemp}</h3>
+        <h3 style={{ color: "#014f86" }}>{props.nightTemp}</h3>
       </div>
     </div>
   );

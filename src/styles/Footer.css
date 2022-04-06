@@ -1,0 +1,28 @@
+#footer{
+    margin-top: auto;
+    height: 10%;
+    color: #ffffff;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#copyright{
+    font-size: 1em;
+    display: inline-block;
+    margin-bottom: 2vh;
+    margin-right: 2vw;
+}
+  
+  @media screen and (max-width: 992px) {
+    #copyright{
+        font-size: .9em;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    #copyright{
+        font-size: .8em;
+    }
+  }

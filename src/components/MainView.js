@@ -9,6 +9,7 @@ import { fetchForecast } from "../utills/fetchForecast";
 import CitySelect from "./CitySelect";
 import Forecast from "./Forecast";
 import LoadingScreen from "./LoadingScreen";
+import Footer from "./Footer";
 
 function MainView() {
   const [loading, setLoading] = useState(true);
@@ -78,6 +79,7 @@ function MainView() {
         </div>
 
         <div className="forecastsDiv">
+          <p className="forecastDates">Weekdays</p>
           {forecast.map((data) => {
             return (
               <Forecast
@@ -90,6 +92,7 @@ function MainView() {
             );
           })}
         </div>
+        <Footer />
       </div>
     );
   }

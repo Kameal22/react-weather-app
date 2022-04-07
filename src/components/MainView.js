@@ -91,7 +91,7 @@ function MainView() {
         <div className="forecastsDiv">
           <div className="forecastDatesDiv">
             <p className="forecastDate1">{forecastDates[0]}</p>
-            <p style={{ color: "#014f86" }}>-</p>
+            <p>-</p>
             <p className="forecastDate2">{forecastDates[2]}</p>
           </div>
           {forecast.map((data) => {

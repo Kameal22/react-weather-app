@@ -13,6 +13,7 @@
     display: inline-block;
     margin-bottom: 2vh;
     margin-right: 2vw;
+    text-shadow: 1px 1px black;
 }
   
   @media screen and (max-width: 992px) {

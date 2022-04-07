@@ -23,6 +23,7 @@
   font-weight: bold;
   letter-spacing: 1px;
   font-size: 2.5em;
+  text-shadow: 2px 2px black;
 }
 
 .mainInfoDiv {
@@ -30,6 +31,7 @@
   margin: 8vh auto;
   display: flex;
   justify-content: space-between;
+  text-shadow: 1px 1px black;
 }
 
 .leftSide {
@@ -71,6 +73,7 @@
   justify-content: space-between;
   color: white;
   position: relative;
+  text-shadow: 1px 1px black;
 }
 
 .forecastDatesDiv{
@@ -79,9 +82,16 @@
   display: flex;
   justify-content: space-around;
   color: rgb(236, 235, 235);
+  font-weight: bold;
 }
 
 /* Responsive below */
+
+@media screen and (max-width: 1650px) {
+  .forecastDatesDiv p{
+    font-size: 4em;
+  }
+}
 
 @media screen and (max-width: 1200px) {
   .cityName {

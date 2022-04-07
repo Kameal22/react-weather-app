@@ -7,7 +7,7 @@ const fetchForecast = async (city, setForecast) => {
   const forecast = [];
 
   const response = await axios.get(
-    `${API_URL}q=${city}&days=3&aqi=no&alerts=no`
+    `${API_URL}q=${city}&days=9&aqi=no&alerts=no`
   );
 
   const forecastData = response.data.forecast.forecastday;

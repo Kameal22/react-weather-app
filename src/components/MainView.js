@@ -17,21 +17,31 @@ function MainView() {
   const [today, setToday] = useState();
   const [localization, setLocalization] = useState();
   const [forecast, setForecast] = useState([]);
+  const [forecastDates, setForecastDates] = useState();
 
   useEffect(() => {
     getLocalization(setLocalization, localization);
-  }, []);
+  }, []); //Gets user localization
 
   useEffect(() => {
     getCurrentDay(setToday, today);
-  }, []);
+  }, []); //Gets current date to show day name
 
   useEffect(() => {
     if (localization !== undefined) {
       fetchWeather(localization, setWeather, setLoading);
       fetchForecast(localization, setForecast);
     }
-  }, [localization]);
+  }, [localization]); //Sets weather and forecast.
+
+  useEffect(() => {
+    const dates = forecast.map((dates) => dates[0].weekday);
+    const datesWithoutYear = [];
+    dates.forEach((date) => {
+      datesWithoutYear.push(date.slice(5, 10));
+    });
+    setForecastDates(datesWithoutYear);
+  }, [forecast]); //Gets todays date and 2 days ahead to display which days are shown in forecast.
 
   const changeLocalization = (localization) => setLocalization(localization);
 
@@ -79,7 +89,11 @@ function MainView() {
         </div>
 
         <div className="forecastsDiv">
-          <p className="forecastDates">Weekdays</p>
+          <div className="forecastDatesDiv">
+            <p className="forecastDate1">{forecastDates[0]}</p>
+            <p style={{ color: "#014f86" }}>-</p>
+            <p className="forecastDate2">{forecastDates[2]}</p>
+          </div>
           {forecast.map((data) => {
             return (
               <Forecast

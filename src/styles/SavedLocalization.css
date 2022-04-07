@@ -1,0 +1,16 @@
+.savedLocalizationsDiv{
+    position: absolute;
+    border-top: 2px solid rgba(255, 255, 240, 0.671);
+    border-bottom: 2px solid rgba(255, 255, 240, 0.671);
+    top: 10%;
+    left: 5%;
+    width: 15%;
+    height: fit-content;
+    text-align: center;
+}
+
+.savedLocalizationsDiv h4{
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+    text-shadow: 2px 2px black;
+}

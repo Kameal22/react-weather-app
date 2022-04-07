@@ -10,6 +10,7 @@ import CitySelect from "./CitySelect";
 import Forecast from "./Forecast";
 import LoadingScreen from "./LoadingScreen";
 import Footer from "./Footer";
+import SavedLocalization from "./SavedLocalization";
 
 function MainView() {
   const [loading, setLoading] = useState(true);
@@ -18,6 +19,11 @@ function MainView() {
   const [localization, setLocalization] = useState();
   const [forecast, setForecast] = useState([]);
   const [forecastDates, setForecastDates] = useState();
+  const [savedLocalizations, setSavedLocalizations] = useState([
+    "Warsaw",
+    "London",
+    "Barcelona",
+  ]); //Hard coded for now, testing
 
   useEffect(() => {
     getLocalization(setLocalization, localization);
@@ -61,6 +67,10 @@ function MainView() {
         <h1 className="cityName">{weather.location.name}</h1>
         <CitySelect changeLocalization={changeLocalization} />
 
+        {savedLocalizations.length > 0 ? (
+          <SavedLocalization cities={savedLocalizations} />
+        ) : null}
+
         <div className="mainInfoDiv">
           <div className="leftSide">
             <h2
@@ -90,6 +100,7 @@ function MainView() {
 
         <div className="forecastsDiv">
           <div className="forecastDatesDiv">
+            <p>For: </p>
             <p className="forecastDate1">{forecastDates[0]}</p>
             <p>-</p>
             <p className="forecastDate2">{forecastDates[2]}</p>

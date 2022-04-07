@@ -14,6 +14,7 @@
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .cityName {
@@ -78,7 +79,7 @@
 
 .forecastDatesDiv{
   position: absolute;
-  width: 12%;
+  width: 16%;
   display: flex;
   justify-content: space-around;
   color: rgb(236, 235, 235);
@@ -89,15 +90,15 @@
 
 /* Forecast dates */
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1780px) {
   .forecastDatesDiv{
-    width: 15%;
+    width: 20%;
   }
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1450px) {
   .forecastDatesDiv{
-    width: 18%;
+    width: 25%;
     font-size: .9em;
   }
 }

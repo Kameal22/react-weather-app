@@ -9,8 +9,23 @@
     text-align: center;
 }
 
-.savedLocalizationsDiv h4{
+.savedLocalizationsDiv h3{
     margin-top: .5vh;
     margin-bottom: .5vh;
     text-shadow: 2px 2px black;
+}
+
+.savedLocalizationsDiv p{
+    color: rgb(211, 211, 211);
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+    margin-top: 1vh;
+}
+
+.savedLocalizationsDiv p:hover{
+    color: ivory;
+}
+
+.savedLocalizationsDiv p:last-child{
+    margin-bottom: 1vh;
 }

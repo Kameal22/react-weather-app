@@ -27,6 +27,20 @@
   text-shadow: 2px 2px black;
 }
 
+.saveCity{
+  text-align: center;
+  position: absolute;
+  top: 11%;
+  left: 56%;
+  color: rgb(233, 231, 231);
+  text-shadow: 1px 1px black;
+  cursor: pointer;
+}
+
+.saveCity:hover{
+  color: ivory;
+}
+
 .mainInfoDiv {
   width: 30%;
   margin: 8vh auto;

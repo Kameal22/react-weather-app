@@ -19,11 +19,7 @@ function MainView() {
   const [localization, setLocalization] = useState();
   const [forecast, setForecast] = useState([]);
   const [forecastDates, setForecastDates] = useState();
-  const [savedLocalizations, setSavedLocalizations] = useState([
-    "Warsaw",
-    "London",
-    "Barcelona",
-  ]); //Hard coded for now, testing
+  const [savedLocalizations, setSavedLocalizations] = useState([]);
 
   useEffect(() => {
     getLocalization(setLocalization, localization);
@@ -51,6 +47,12 @@ function MainView() {
 
   const changeLocalization = (localization) => setLocalization(localization);
 
+  const saveCity = (city) => {
+    if (!savedLocalizations.includes(city)) {
+      setSavedLocalizations((localization) => [...localization, city]);
+    }
+  };
+
   if (loading) {
     return <LoadingScreen />;
   } else {
@@ -65,10 +67,22 @@ function MainView() {
         }}
       >
         <h1 className="cityName">{weather.location.name}</h1>
+        {!savedLocalizations.includes(weather.location.name) ? (
+          <p
+            onClick={() => saveCity(weather.location.name)}
+            className="saveCity"
+          >
+            Save city
+          </p>
+        ) : null}
+
         <CitySelect changeLocalization={changeLocalization} />
 
         {savedLocalizations.length > 0 ? (
-          <SavedLocalization cities={savedLocalizations} />
+          <SavedLocalization
+            cities={savedLocalizations}
+            changeCity={changeLocalization}
+          />
         ) : null}
 
         <div className="mainInfoDiv">

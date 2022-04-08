@@ -1,12 +1,15 @@
 import "../styles/SavedLocalization.css";
 
 const SavedLocalization = (props) => {
-  console.log(props);
   return (
     <div className="savedLocalizationsDiv">
-      <h4 style={{ color: "ivory" }}>Your localizations</h4>
+      <h3 style={{ color: "ivory" }}>Your localizations</h3>
       {props.cities.map((city) => {
-        return <p>{city}</p>;
+        return (
+          <p onClick={() => props.changeCity(city)} key={city}>
+            {city}
+          </p>
+        );
       })}
     </div>
   );

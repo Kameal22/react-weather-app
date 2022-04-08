@@ -2,7 +2,7 @@
     position: absolute;
     border-top: 2px solid rgba(255, 255, 240, 0.671);
     border-bottom: 2px solid rgba(255, 255, 240, 0.671);
-    top: 10%;
+    top: 8%;
     left: 5%;
     width: 15%;
     height: fit-content;
@@ -29,3 +29,76 @@
 .savedLocalizationsDiv p:last-child{
     margin-bottom: 1vh;
 }
+  
+  @media screen and (max-width: 1450px) {
+    .savedLocalizationsDiv{
+        position: absolute;
+        border-top: 2px solid rgba(255, 255, 240, 0.671);
+        border-bottom: 2px solid rgba(255, 255, 240, 0.671);
+        top: 10%;
+        left: 5%;
+        width: 18%;
+        height: fit-content;
+        text-align: center;
+    }
+    
+    .savedLocalizationsDiv h3{
+        margin-top: .5vh;
+        margin-bottom: .5vh;
+        text-shadow: 2px 2px black;
+        font-size: 1.1em;
+    }
+    
+    .savedLocalizationsDiv p{
+        color: rgb(211, 211, 211);
+        text-shadow: 1px 1px black;
+        cursor: pointer;
+        margin-top: 1vh;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .savedLocalizationsDiv{
+        position: absolute;
+        border-top: 2px solid rgba(255, 255, 240, 0.671);
+        border-bottom: 2px solid rgba(255, 255, 240, 0.671);
+        top: 10%;
+        left: 5%;
+        width: 20%;
+        height: fit-content;
+        text-align: center;
+    }
+    
+    .savedLocalizationsDiv h3{
+        margin-top: .5vh;
+        margin-bottom: .5vh;
+        text-shadow: 2px 2px black;
+        font-size: 1em;
+    }
+    
+    .savedLocalizationsDiv p{
+        color: rgb(211, 211, 211);
+        text-shadow: 1px 1px black;
+        cursor: pointer;
+        margin-top: 1vh;
+        font-size: .9em;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .savedLocalizationsDiv{
+        display: none;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .savedLocalizationsDiv{
+        display: none;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .savedLocalizationsDiv{
+        display: none;
+    }
+  }

@@ -29,6 +29,19 @@
 .savedLocalizationsDiv p:last-child{
     margin-bottom: 1vh;
 }
+
+.savedLocalizationHeadingAndArrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.savedLocalizationHeadingAndArrow i{
+    margin-left: 1em;
+    margin-top: .5vh;
+    cursor: pointer;
+    color: ivory;
+}
   
   @media screen and (max-width: 1450px) {
     .savedLocalizationsDiv{

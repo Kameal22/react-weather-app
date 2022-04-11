@@ -39,9 +39,11 @@ function MainView() {
   useEffect(() => {
     const dates = forecast.map((dates) => dates[0].weekday);
     const datesWithoutYear = [];
+
     dates.forEach((date) => {
       datesWithoutYear.push(date.slice(5, 10));
     });
+
     setForecastDates(datesWithoutYear);
   }, [forecast]); //Gets todays date and 2 days ahead to display which days are shown in forecast.
 
@@ -51,6 +53,14 @@ function MainView() {
     if (!savedLocalizations.includes(city)) {
       setSavedLocalizations((localization) => [...localization, city]);
     }
+  };
+
+  const deleteCity = (city) => {
+    const citiesAfterRemove = savedLocalizations.filter(
+      (localization) => localization !== city
+    );
+
+    setSavedLocalizations(citiesAfterRemove);
   };
 
   if (loading) {
@@ -82,6 +92,7 @@ function MainView() {
           <SavedLocalization
             cities={savedLocalizations}
             changeCity={changeLocalization}
+            deleteCity={deleteCity}
           />
         ) : null}
 

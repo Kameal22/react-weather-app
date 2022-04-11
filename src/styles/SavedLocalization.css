@@ -5,8 +5,13 @@
     top: 8%;
     left: 5%;
     width: 15%;
-    height: fit-content;
+    max-height: 150px;
+    overflow-y: scroll;
     text-align: center;
+}
+
+.savedLocalizationsDiv::-webkit-scrollbar{
+    display: none;
 }
 
 .savedLocalizationsDiv h3{
@@ -26,10 +31,6 @@
     color: ivory;
 }
 
-.savedLocalizationsDiv p:last-child{
-    margin-bottom: 1vh;
-}
-
 .savedLocalizationHeadingAndArrow{
     display: flex;
     align-items: center;
@@ -41,6 +42,19 @@
     margin-top: .5vh;
     cursor: pointer;
     color: ivory;
+}
+
+.savedCityAndIconDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+.savedCityAndIconDiv i{
+    margin-left: .5em;
+    color: white;
+    cursor: pointer;
 }
   
   @media screen and (max-width: 1450px) {

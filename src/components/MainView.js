@@ -11,6 +11,7 @@ import Forecast from "./Forecast";
 import LoadingScreen from "./LoadingScreen";
 import Footer from "./Footer";
 import SavedLocalization from "./SavedLocalization";
+import useArray from "../hooks/useArray";
 
 function MainView() {
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,7 @@ function MainView() {
   const [localization, setLocalization] = useState();
   const [forecast, setForecast] = useState([]);
   const [forecastDates, setForecastDates] = useState();
-  const [savedLocalizations, setSavedLocalizations] = useState([]);
+  const [savedLocalizations, , push, , , remove] = useArray([]);
 
   useEffect(() => {
     getLocalization(setLocalization, localization);
@@ -51,16 +52,12 @@ function MainView() {
 
   const saveCity = (city) => {
     if (!savedLocalizations.includes(city)) {
-      setSavedLocalizations((localization) => [...localization, city]);
+      push(city);
     }
   };
 
   const deleteCity = (city) => {
-    const citiesAfterRemove = savedLocalizations.filter(
-      (localization) => localization !== city
-    );
-
-    setSavedLocalizations(citiesAfterRemove);
+    remove(city);
   };
 
   if (loading) {

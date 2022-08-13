@@ -18,7 +18,7 @@ const SavedLocalization = (props) => {
         <h3 style={{ color: "ivory" }}>Your locations</h3>
         <i
           onClick={() => setShownCities(!shownCities)}
-          class={
+          className={
             shownCities ? "bi bi-arrow-up-square" : "bi bi-arrow-down-square"
           }
         ></i>
@@ -26,11 +26,11 @@ const SavedLocalization = (props) => {
       {props.cities.map((city) => {
         if (shownCities) {
           return (
-            <div className="savedCityAndIconDiv">
+            <div key={city} className="savedCityAndIconDiv">
               <p onClick={() => props.changeCity(city)} key={city}>
                 {city}
               </p>
-              <i onClick={() => props.deleteCity(city)} class="bi bi-x"></i>
+              <i onClick={() => props.deleteCity(city)} className="bi bi-x"></i>
             </div>
           );
         }
